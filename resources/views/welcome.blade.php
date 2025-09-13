@@ -67,6 +67,30 @@
       letter-spacing: 1px;
       color: #1a1a1a;
     }
+
+    /* Botón subir */
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 50%;
+      background: #198754;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+      display: none;
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    .btn-scroll-top:hover {
+      background: #146c43;
+      transform: translateY(-3px);
+    }
   </style>
 @endsection
 
@@ -286,7 +310,28 @@
         </div>
       </div>
     </div>
-
-    
   </section>
+
+  <!-- Botón subir -->
+  <button id="btnScrollTop" class="btn-scroll-top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script>
+    const btnScrollTop = document.getElementById("btnScrollTop");
+
+    // Mostrar/ocultar botón según el scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btnScrollTop.style.display = "block";
+      } else {
+        btnScrollTop.style.display = "none";
+      }
+    });
+
+    // Acción al hacer clic → subir suavemente
+    btnScrollTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 @endsection
