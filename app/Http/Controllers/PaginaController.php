@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Factura;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-
 class PaginaController extends Controller
 {
     // Mostrar el formulario
@@ -36,7 +35,14 @@ class PaginaController extends Controller
             'correlativo' => $request->correlativo,
         ]);
 
-        // Redirigir y mostrar los datos de la factura registrada
+        // Mensaje flash con fecha/hora local (ya configurada en America/Lima desde config/app.php)
+        session()->flash(
+            'success',
+            'Factura Registrada Correctamente - ' .
+            $factura->created_at->format('d/m/Y H:i:s')
+        );
+
+        // Redirigir y mostrar el mensaje
         return redirect()->back()->with('factura', $factura);
     }
 
@@ -53,3 +59,4 @@ class PaginaController extends Controller
         return $pdf->download('factura_' . $factura->id . '.pdf');
     }
 }
+

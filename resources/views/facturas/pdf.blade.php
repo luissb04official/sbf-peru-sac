@@ -48,7 +48,7 @@
         }
 
         .logo {
-            width: 130px; 
+            width: 130px;
             height: auto;
             object-fit: contain;
             border: 1px solid #ddd;
@@ -77,12 +77,11 @@
             font-size: 0.95rem;
         }
 
-  
         .fecha-emision {
             margin-bottom: 15px;
             font-size: 1rem;
         }
-        
+
         .detalle table {
             width: 100%;
             border-collapse: collapse;
@@ -104,7 +103,7 @@
 <body>
 
 <div class="factura-container">
-    
+
     <div class="factura-header">
         <!-- Info empresa -->
         <div class="empresa-info">
@@ -115,17 +114,17 @@
             <p>Web: www.proveedorpse.com</p>
         </div>
 
-            <div class="factura-info">
-                <p><strong>R.U.C.</strong> {{ $factura->ruc }}</p>
-                <h3>{{ strtoupper($factura->tipo) }}</h3>
-                <p><strong>N°</strong> {{ $factura->serie }} - {{ $factura->correlativo }}</p>
-            </div>
+        <div class="factura-info">
+            <p><strong>R.U.C.</strong> {{ $factura->ruc }}</p>
+            <h3>{{ strtoupper($factura->tipo) }}</h3>
+            <p><strong>N°</strong> {{ $factura->serie }} - {{ $factura->correlativo }}</p>
         </div>
     </div>
 
     <!-- Fecha de emisión -->
     <div class="fecha-emision">
-        <strong>Fecha de Emisión:</strong> {{ $factura->created_at->format('d/m/Y H:i:s') }}
+        <strong>Fecha de Emisión:</strong>
+        {{ $factura->created_at->timezone('America/Lima')->format('d/m/Y H:i:s') }}
     </div>
 
     <!-- Tabla detalle -->

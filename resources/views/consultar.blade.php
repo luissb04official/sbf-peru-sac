@@ -117,7 +117,7 @@
                 <div class="factura-info">
                     <h5><i class="bi bi-file-earmark-check-fill"></i> Factura Registrada Correctamente</h5>
                     <p><strong>RUC:</strong> {{ session('factura')->ruc }}</p>
-                    <p><strong>Fecha y Hora:</strong> {{ session('factura')->created_at->format('Y-m-d H:i:s') }}</p>
+                    <p><strong>Fecha y Hora:</strong> {{ session('factura')->created_at->timezone('America/Lima')->format('Y-m-d H:i:s') }}</p>
                     <p><strong>Tipo:</strong> {{ session('factura')->tipo }}</p>
                     <p><strong>Serie:</strong> {{ session('factura')->serie }}</p>
                     <p><strong>Correlativo:</strong> {{ session('factura')->correlativo }}</p>

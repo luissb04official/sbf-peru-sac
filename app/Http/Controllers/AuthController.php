@@ -54,7 +54,15 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            // ✅ Valida que sea email, único y termine en @gmail.com
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'unique:users',
+                'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'
+            ],
             'usuario' => 'required|string|max:255|unique:users,name',
             'password' => 'required|string|min:8',
             'password_confirmation' => 'required|string|same:password',
@@ -62,6 +70,7 @@ class AuthController extends Controller
             'name.required' => 'El nombre completo es obligatorio',
             'email.required' => 'El correo electrónico es obligatorio',
             'email.email' => 'Debe ingresar un correo electrónico válido en formato usuario@dominio.com',
+            'email.regex' => 'Solo se permiten correos @gmail.com',
             'email.unique' => 'Este correo electrónico ya está registrado',
             'usuario.required' => 'El usuario es obligatorio',
             'usuario.unique' => 'Este nombre de usuario ya está en uso',
@@ -103,11 +112,18 @@ class AuthController extends Controller
     public function recuperarPassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|email|exists:users,email'
+            // ✅ Igual validación para recuperación
+            'email' => [
+                'required',
+                'email',
+                'exists:users,email',
+                'regex:/^[a-zA-Z0-9._%+-]+@gmail\.com$/'
+            ]
         ], [
             'email.required' => 'El correo electrónico es obligatorio',
             'email.email' => 'Debe ingresar un correo electrónico válido en formato usuario@dominio.com',
             'email.exists' => 'No encontramos una cuenta con este correo electrónico',
+            'email.regex' => 'Solo se permiten correos @gmail.com',
         ]);
 
         if ($validator->fails()) {
