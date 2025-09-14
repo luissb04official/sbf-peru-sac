@@ -101,42 +101,42 @@
 @endsection
 
 @section('content')
-  <!-- Hero -->
-  <section id="inicio" class="hero d-flex align-items-center text-start py-5">
+ <!-- Hero -->
+<section id="inicio" class="hero d-flex align-items-center text-start py-5" style="height: 90vh; padding-top: 100px; padding-bottom: 80px;">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-7">
-          <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInUp">
-            Facturación Electrónica Ágil y confiable
-          </h1>
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInUp">
+                    Facturación Electrónica Ágil y confiable
+                </h1>
 
-          <style>
-          .titulo-personalizado {
-           font-family: 'Nunito Sans', sans-serif;
-           font-weight: 700;
-           letter-spacing: 0.7px;
-           color: #ffffff;
-           }
-          </style>
+                <style>
+                .titulo-personalizado {
+                 font-family: 'Nunito Sans', sans-serif;
+                 font-weight: 700;
+                 letter-spacing: 0.7px;
+                 color: #ffffff;
+                 }
+                </style>
 
-          <p class="lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">
-            El sistema de facturación electrónica más rápido, seguro y accesible del Perú.
-            Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
-          </p>
+                <p class="lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">
+                    El sistema de facturación electrónica más rápido, seguro y accesible del Perú.
+                    Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
+                </p>
 
-          <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-2s">
-            <li>✅ Simplifica tu contabilidad</li>
-            <li>✅ Integrado a SUNAT & RENIEC</li>
-            <li>✅ Planes flexibles</li>
-            <li>✅ Gestión administrativa completa</li>
-          </ul>
+                <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <li>✅ Simplifica tu contabilidad</li>
+                    <li>✅ Integrado a SUNAT & RENIEC</li>
+                    <li>✅ Planes flexibles</li>
+                    <li>✅ Gestión administrativa completa</li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <p class="mt-4 fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-3s">
-        ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
-      </p>
+        <p class="mt-4 fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-3s">
+            ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
+        </p>
     </div>
-  </section>
+</section>
 
   <!-- Servicios -->
   <section id="servicios" class="py-5"
@@ -172,7 +172,7 @@
           </div>
         </div>
 
-        <!-- Mockup central reducido -->
+        <!-- Mockup central -->
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <img src="{{ asset('img/mockup-sistema.png') }}" class="img-fluid" style="max-width:75%; height:auto;"
             alt="Pantallas del sistema">
@@ -201,32 +201,36 @@
   </section>
 
   <!-- Nosotros -->
-  <section id="nosotros" class="py-5 text-center text-dark"
+<section id="nosotros" class="py-5 text-center text-dark"
     style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover;">
-    <div class="container">
-      <h2 class="fw-bold mb-3">BIENVENIDO A SBF PERÚ S.A.C.</h2>
-      <p class="mb-3" style="font-size: 15px;">
-        SBF Perú S.A.C. es una empresa dedicada a brindar diversos servicios, entre ellos, Librería Fotocopiadora,
-        Facturación Electrónica para empresas RUC 10 o 20 para emprendedores de todos los giros, Servicio Técnico, Venta
-        de equipos de informática y Video seguridad e instalación. Con más de 5 años desde su fundación seguimos
-        posicionados como una empresa que se preocupa por las personas, buscando brindar siempre el mejor servicio.
-      </p>
+  <div class="container">
 
-      <div class="container my-5">
-        <h2 class="text-center fw-bold mb-4">Nuestros Servicios</h2>
-        <div class="row g-4 justify-content-center">
-          <!-- Servicio 1 -->
-          <div class="col-md-3 col-sm-6">
-            <div class="card shadow-lg border-0 h-100 text-center service-card">
-              <img src="{{ asset('img/sopote-equipos.png') }}" alt="Soporte de equipos"
+    <!-- Título  -->
+    <h2 class="formal-title text-center">¿QUIENES SOMOS?</h2>
+    <p class="formal-text mb-3">
+      SBF Perú S.A.C. es una empresa dedicada a brindar diversos servicios, entre ellos, Librería Fotocopiadora,
+      Facturación Electrónica para empresas RUC 10 o 20 para emprendedores de todos los giros, Servicio Técnico, Venta
+      de equipos de informática y Video seguridad e instalación. Con más de 5 años desde su fundación seguimos
+      posicionados como una empresa que se preocupa por las personas, buscando brindar siempre el mejor servicio.
+    </p>
+
+    <!-- Nuestros Servicios -->
+    <div class="container my-5">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Servicio 1 -->
+        <div class="col-md-3 col-sm-6">
+          <div class="card shadow-sm border-0 h-100 text-center service-card">
+            <img src="{{ asset('img/sopote-equipos.png') }}" alt="Soporte de equipos"
                 class="card-img-top rounded-top">
-              <div class="card-body">
-                <h5 class="fw-bold">Soporte de Equipos</h5>
-                <p class="text-muted small">Mantenimiento y reparación de equipos de cómputo con soporte técnico
-                  especializado.</p>
-              </div>
+            <div class="card-body">
+              <h5 class="fw-bold">Soporte de Equipos</h5>
+              <p class="text-muted small">
+                Mantenimiento y reparación de equipos de cómputo con soporte técnico especializado.
+              </p>
             </div>
           </div>
+        </div>
 
           <!-- Servicio 2 -->
           <div class="col-md-3 col-sm-6">
@@ -274,14 +278,63 @@
     </div>
   </section>
 
-  <!-- Redes -->
-  <section id="redes" class="py-5"
-    style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover; position: relative;">
-    <div class="container" style="padding-bottom: 200px;">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
+<!-- Sección de contacto -->
+<section id="contacto" class="py-5" style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover;">
+    <div class="container">
+       <h2 class="text-center fw-bold mb-5" style="font-family: 'Nunito Sans', sans-serif; color: #333333; letter-spacing: 1px; font-weight: 700;">¿CÓMO PODEMOS AYUDARTE?</h2>
+        <div class="row justify-content-center align-items-center">
+            <!-- Columna izquierda: Formulario -->
+            <div class="col-md-6">
+                <div class="bg-light p-5 rounded-3 shadow-lg" style="background-color: #c5c7cd;">
 
-  </section>
+                    <!-- Título -->
+                    <h3 class="text-center mb-4" style="font-family: 'Nunito Sans', sans-serif; color: #23262a; font-weight: 500;">CONTÁCTANOS</h3>
+
+                    <form action="#" method="POST">
+                        @csrf
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label fw-bold" style="color: #2C3E50;">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                        </div>
+
+                        <!-- RUC -->
+                        <div class="mb-3">
+                            <label for="ruc" class="form-label fw-bold" style="color: #2C3E50;">RUC</label>
+                            <input type="text" class="form-control" id="ruc" name="ruc" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                        </div>
+
+                        <!-- Correo Electrónico -->
+                        <div class="mb-3">
+                            <label for="correo" class="form-label fw-bold" style="color: #2C3E50;">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label fw-bold" style="color: #2C3E50;">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                        </div>
+
+                        <!-- Comentarios  -->
+                        <div class="mb-3">
+                            <label for="comentarios" class="form-label fw-bold" style="color: #2C3E50;"></label>
+                            <textarea class="form-control" id="comentarios" name="comentarios" rows="4" required placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente." style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;"></textarea>
+                        </div>
+
+                        <!-- Botón de enviar -->
+                        <button type="submit" class="btn btn-primary" style="border-radius: 20px; font-weight: bold; padding: 10px 25px;">Solicitar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Columna derecha: Imagen -->
+            <div class="col-md-6">
+                <img src="{{ asset('img/contacto-imagen.png') }}" alt="Imagen de contacto" class="img-fluid rounded-3 shadow-sm" style="max-width: 250%; height: auto; border-radius: 55px; position: relative; left: 55px;">
+            </div>
+        </div>
+    </div>
+</section>
 
   <!-- Botón subir -->
 <button id="btnScrollTop" class="btn-scroll-top">

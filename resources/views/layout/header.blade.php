@@ -2,7 +2,7 @@
     <div class="container">
       <!-- Logo -->
       <a class="navbar-brand fw-bold" href="#inicio">
-        <img src="{{ asset('img/logo1.png') }}" alt="Logo" height="56" class="me-2">
+        <img src="{{ asset('img/logo1.png') }}" alt="Logo" height="57" class="me-2">
       </a>
 
       <!-- Botón -->
@@ -18,12 +18,13 @@
           <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">INICIO</a></li>
           <li class="nav-item"><a class="nav-link" href="#servicios">SERVICIOS</a></li>
           <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#redes">REDES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
+
         </ul>
 
         <style>
           .custom-nav {
-            margin-left: 55px;
+            margin-left: 65px;
           }
         </style>
 
