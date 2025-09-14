@@ -28,4 +28,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
-Route::post('/contacto', [ContactoController::class, 'store'])->name('contacto.store');
+

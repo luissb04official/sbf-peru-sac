@@ -281,54 +281,6 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
 
-          <!-- Caja blanca centrada -->
-          <div class="bg-white shadow-lg rounded-4 p-5 text-center" style="margin-bottom: 0;">
-            <h3 class="fw-bold mb-3" style="color:#222; font-size:1.8rem;">¡EMPIEZA GRATIS HOY!</h3>
-            <p class="mb-4" style="color:#555; font-size:1rem;">
-              Solicita una demo y descubre cómo podemos transformar tu negocio
-            </p>
-
-            <!-- Mensaje de éxito -->
-            @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
-
-            <form action="{{ route('contacto.store') }}" method="POST">
-  @csrf
-  <div class="mb-3">
-    <input type="text" name="nombre" class="form-control rounded-pill" placeholder="Nombre" required>
-  </div>
-  <div class="mb-3">
-    <input type="text" name="apellido" class="form-control rounded-pill" placeholder="Apellido" required>
-  </div>
-  <div class="mb-3">
-    <input type="email" name="correo" id="correo" class="form-control rounded-pill" placeholder="Correo" required>
-    <small id="correo-error" class="text-danger"></small>
-  @error('correo')
-      <small class="text-danger">{{ $message }}</small>
-  @enderror
-</div>
-  <div class="mb-3">
-    <input type="tel" name="telefono" class="form-control rounded-pill" placeholder="Teléfono" required>
-  </div>
-  <div class="mb-3">
-    <textarea name="mensaje" class="form-control rounded-3" rows="3" placeholder="Mensaje" style="resize: none;"></textarea>
-  </div>
-  <button type="submit" style="display:inline-flex;align-items:center;gap:6px;
-    background:#659869;color:#fff;border:none;
-    border-radius:50px;padding:10px 22px;
-    font-size:1rem;font-weight:600;cursor:pointer;
-    transition:background .3s">
-    <i class="bi bi-send-fill"></i> ENVIAR
-  </button>
-</form>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- Botón subir -->
@@ -359,31 +311,6 @@
       alert.classList.add('fade');
     }
   }, 5000);
-
-  const correoInput = document.getElementById('correo');
-  const correoError = document.getElementById('correo-error');
-
- correoInput.addEventListener('input', () => {
-    const value = correoInput.value.trim();
-    const gmailRegex = /^[^\s@]+@gmail\.com$/i;
-    if (!gmailRegex.test(value)) {
-        correoError.textContent = "❌ El correo debe ser un Gmail válido (ejemplo@gmail.com)";
-    } else {
-        correoError.textContent = "";
-    }
-});
-
-  const telefonoInput = document.querySelector('input[name="telefono"]');
-
-  telefonoInput.addEventListener('input', () => {
-
-      telefonoInput.value = telefonoInput.value.replace(/\D/g, '');
-
-      // Limitar a 9 dígitos
-      if (telefonoInput.value.length > 9) {
-          telefonoInput.value = telefonoInput.value.slice(0, 9);
-      }
-  });
 
 </script>
 @endsection

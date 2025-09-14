@@ -54,7 +54,6 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            // ✅ Valida que sea email, único y termine en @gmail.com
             'email' => [
                 'required',
                 'string',
@@ -112,7 +111,6 @@ class AuthController extends Controller
     public function recuperarPassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            // ✅ Igual validación para recuperación
             'email' => [
                 'required',
                 'email',
