@@ -14,16 +14,17 @@
 
         .factura-container {
             border: 2px solid #000;
-            padding: 20px 25px;
-            max-width: 800px;
+            padding: 30px;
+            max-width: 900px;
             margin: 30px auto;
             background: #fff;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
 
         .factura-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Alinea el logo a la derecha y la info a la izquierda */
             align-items: flex-start;
             border-bottom: 2px solid #000;
             padding-bottom: 15px;
@@ -37,16 +38,19 @@
 
         .empresa-info h2 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
+            color: #1a1a1a;
         }
 
         .empresa-info p {
             margin: 4px 0;
             font-size: 0.9rem;
-            line-height: 1.3;
+            line-height: 1.5;
+            color: #333;
         }
 
+        /* Estilo para el logo */
         .logo {
             width: 130px;
             height: auto;
@@ -55,6 +59,8 @@
             padding: 5px;
             background: #fff;
             border-radius: 6px;
+            /* Alineación del logo a la derecha */
+            margin-left: 10px;
         }
 
         .factura-info {
@@ -68,35 +74,72 @@
 
         .factura-info h3 {
             margin: 6px 0;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            color: #000;
         }
 
         .factura-info p {
             margin: 4px 0;
-            font-size: 0.95rem;
+            font-size: 1rem;
+            color: #333;
         }
 
         .fecha-emision {
             margin-bottom: 15px;
             font-size: 1rem;
+            font-weight: bold;
+            color: #333;
         }
 
         .detalle table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
 
         .detalle th, .detalle td {
             border: 1px solid #000;
-            padding: 8px;
+            padding: 12px 8px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            color: #333;
         }
 
         .detalle th {
             background: #f2f2f2;
             font-weight: bold;
+        }
+
+        .detalle td {
+            background: #fafafa;
+        }
+
+        .detalle td strong {
+            font-weight: bold;
+        }
+
+        /* Ajuste de la pantallas */
+        @media (max-width: 600px) {
+            .factura-container {
+                padding: 15px;
+                max-width: 100%;
+            }
+
+            .factura-header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .empresa-info {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .logo {
+                display: block;
+                margin: 10px auto;
+            }
         }
     </style>
 </head>
@@ -104,6 +147,7 @@
 
 <div class="factura-container">
 
+    <!-- Header de la factura -->
     <div class="factura-header">
         <!-- Info empresa -->
         <div class="empresa-info">
@@ -114,11 +158,11 @@
             <p>Web: www.proveedorpse.com</p>
         </div>
 
-        <div class="factura-info">
-            <p><strong>R.U.C.</strong> {{ $factura->ruc }}</p>
-            <h3>{{ strtoupper($factura->tipo) }}</h3>
-            <p><strong>N°</strong> {{ $factura->serie }} - {{ $factura->correlativo }}</p>
-        </div>
+    <!-- Info de la factura -->
+    <div class="factura-info">
+        <p><strong>R.U.C.</strong> {{ $factura->ruc }}</p>
+        <h3>{{ strtoupper($factura->tipo) }}</h3>
+        <p><strong>N°</strong> {{ $factura->serie }} - {{ $factura->correlativo }}</p>
     </div>
 
     <!-- Fecha de emisión -->
@@ -127,7 +171,7 @@
         {{ $factura->created_at->timezone('America/Lima')->format('d/m/Y H:i:s') }}
     </div>
 
-    <!-- Tabla detalle -->
+    <!-- Detalle de la factura -->
     <div class="detalle">
         <table>
             <thead>
