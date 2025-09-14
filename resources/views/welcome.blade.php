@@ -3,6 +3,7 @@
 @section('title', 'SBF Perú')
 
 @section('css')
+
   <style>
     /* General */
     body {
@@ -26,7 +27,7 @@
     }
 
     .custom-nav {
-      margin-left: 80px;
+      margin-left: 90px;
     }
 
     @media (min-width: 995px) {
@@ -91,6 +92,11 @@
       background: #146c43;
       transform: translateY(-3px);
     }
+
+    /* Velocidad global animaciones */
+    .animate__animated {
+      --animate-duration: 1.0s;
+    }
   </style>
 @endsection
 
@@ -100,24 +106,25 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-7">
-          <h1 class="display-5 fw-bold titulo-personalizado">
-            FACTURACIÓN ELECTRÓNICA ÁGIL Y CONFIABLE
+          <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInUp">
+            Facturación Electrónica Ágil y confiable
           </h1>
 
           <style>
-            .titulo-personalizado {
-              font-family: 'Raleway', sans-serif;
-              font-weight: 700;
-              font-size: 3rem;
-              letter-spacing: 1px;
-              color: #ffffff;
-            }
+          .titulo-personalizado {
+           font-family: 'Nunito Sans', sans-serif;
+           font-weight: 700;
+           letter-spacing: 0.7px;
+           color: #ffffff;
+           }
           </style>
-          <p class="lead mt-3">
+
+          <p class="lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">
             El sistema de facturación electrónica más rápido, seguro y accesible del Perú.
             Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
           </p>
-          <ul class="list-unstyled fs-5 mt-4">
+
+          <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-2s">
             <li>✅ Simplifica tu contabilidad</li>
             <li>✅ Integrado a SUNAT & RENIEC</li>
             <li>✅ Planes flexibles</li>
@@ -125,12 +132,11 @@
           </ul>
         </div>
       </div>
-      <p class="mt-4 fs-5 fw-semibold text-center">
-        ¡Empieza a facturar hoy mismo y haz crecer tu negocio sin límites!
+      <p class="mt-4 fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-3s">
+        ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
       </p>
     </div>
   </section>
-
 
   <!-- Servicios -->
   <section id="servicios" class="py-5"
@@ -282,30 +288,43 @@
               Solicita una demo y descubre cómo podemos transformar tu negocio
             </p>
 
-            <!-- Formulario -->
-            <form>
-              <div class="mb-3">
-                <input type="text" class="form-control rounded-pill" placeholder="Nombre" required>
-              </div>
-              <div class="mb-3">
-                <input type="email" class="form-control rounded-pill" placeholder="Correo" required>
-              </div>
-              <div class="mb-3">
-                <input type="tel" class="form-control rounded-pill" placeholder="Teléfono" required>
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control rounded-3" rows="3" placeholder="Mensaje"
-                  style="resize: none;"></textarea>
-              </div>
-              <button type="submit" style="display:inline-flex;align-items:center;gap:6px;
-             background:#659869;color:#fff;border:none;
-             border-radius:50px;padding:10px 22px;
-             font-size:1rem;font-weight:600;cursor:pointer;
-             transition:background .3s">
-                <i class="bi bi-send-fill"></i> ENVIAR
-              </button>
+            <!-- Mensaje de éxito -->
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
 
-            </form>
+            <form action="{{ route('contacto.store') }}" method="POST">
+  @csrf
+  <div class="mb-3">
+    <input type="text" name="nombre" class="form-control rounded-pill" placeholder="Nombre" required>
+  </div>
+  <div class="mb-3">
+    <input type="text" name="apellido" class="form-control rounded-pill" placeholder="Apellido" required>
+  </div>
+  <div class="mb-3">
+    <input type="email" name="correo" id="correo" class="form-control rounded-pill" placeholder="Correo" required>
+    <small id="correo-error" class="text-danger"></small>
+  @error('correo')
+      <small class="text-danger">{{ $message }}</small>
+  @enderror
+</div>
+  <div class="mb-3">
+    <input type="tel" name="telefono" class="form-control rounded-pill" placeholder="Teléfono" required>
+  </div>
+  <div class="mb-3">
+    <textarea name="mensaje" class="form-control rounded-3" rows="3" placeholder="Mensaje" style="resize: none;"></textarea>
+  </div>
+  <button type="submit" style="display:inline-flex;align-items:center;gap:6px;
+    background:#659869;color:#fff;border:none;
+    border-radius:50px;padding:10px 22px;
+    font-size:1rem;font-weight:600;cursor:pointer;
+    transition:background .3s">
+    <i class="bi bi-send-fill"></i> ENVIAR
+  </button>
+</form>
           </div>
         </div>
       </div>
@@ -313,25 +332,58 @@
   </section>
 
   <!-- Botón subir -->
-  <button id="btnScrollTop" class="btn-scroll-top">
-    <i class="bi bi-arrow-up"></i>
-  </button>
+<button id="btnScrollTop" class="btn-scroll-top">
+  <i class="bi bi-arrow-up"></i>
+</button>
 
-  <script>
-    const btnScrollTop = document.getElementById("btnScrollTop");
+<script>
+  const btnScrollTop = document.getElementById("btnScrollTop");
 
-    // Mostrar/ocultar botón según el scroll
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        btnScrollTop.style.display = "block";
-      } else {
-        btnScrollTop.style.display = "none";
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnScrollTop.style.display = "block";
+    } else {
+      btnScrollTop.style.display = "none";
+    }
+  });
+
+  btnScrollTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Auto-cerrar alertas después de 5s
+  setTimeout(() => {
+    let alert = document.querySelector('.alert');
+    if (alert) {
+      alert.classList.remove('show');
+      alert.classList.add('fade');
+    }
+  }, 5000);
+
+  const correoInput = document.getElementById('correo');
+  const correoError = document.getElementById('correo-error');
+
+ correoInput.addEventListener('input', () => {
+    const value = correoInput.value.trim();
+    const gmailRegex = /^[^\s@]+@gmail\.com$/i;
+    if (!gmailRegex.test(value)) {
+        correoError.textContent = "❌ El correo debe ser un Gmail válido (ejemplo@gmail.com)";
+    } else {
+        correoError.textContent = "";
+    }
+});
+
+  const telefonoInput = document.querySelector('input[name="telefono"]');
+
+  telefonoInput.addEventListener('input', () => {
+
+      telefonoInput.value = telefonoInput.value.replace(/\D/g, '');
+
+      // Limitar a 9 dígitos
+      if (telefonoInput.value.length > 9) {
+          telefonoInput.value = telefonoInput.value.slice(0, 9);
       }
-    });
+  });
 
-    // Acción al hacer clic → subir suavemente
-    btnScrollTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
+</script>
 @endsection

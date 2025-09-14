@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactoController; // 👈 Importar controlador de contacto
 
 Route::get('/', [AuthController::class, 'showLogin'])->name('login');
 
@@ -24,5 +25,7 @@ Route::post('/consultar', [PaginaController::class, 'guardarFactura'])->name('co
 Route::get('/factura/{id}/descargar', [PaginaController::class, 'descargar'])->name('factura.descargar');
 
 Route::get('/dashboard', function () {
-    return view('dashboard'); 
+    return view('dashboard');
 })->middleware('auth');
+
+Route::post('/contacto', [ContactoController::class, 'store'])->name('contacto.store');
