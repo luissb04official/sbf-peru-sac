@@ -120,9 +120,8 @@
                 </style>
 
                 <p class="mt-3 animate__animated animate__fadeInUp animate__delay-1s"
-                 style="font-size: 18px; font-family: 'Open Sans', sans-serif;">
-                   El sistema de facturación electrónica más rápido, seguro y accesible del Perú.
-                   Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
+                 style="font-size: 17px; font-family: 'Open Sans', sans-serif;">
+                   El sistema de facturación electrónica más rápido, seguro y accesible del Perú. Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
                 </p>
 
 
@@ -144,17 +143,17 @@
 
   <!-- Servicios -->
   <section id="servicios" class="py-5"
-    style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover;">
+    style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover; padding: 50px 0;"">
     <div class="container">
 
       <!-- Título -->
       <h2 class="text-center fw-bold mb-3"
-      style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 2px; color: #000000;">
+      style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 1px; color: #000000;">
       SOLUCIÓN DE FACTURACIÓN TODO EN UNO
      </h2>
 
 
-      <p class="custom-text text-center mb-5">
+      <p class="custom-text text-center mb-4">
         Optimiza la gestión de tu facturación electrónica con nuestra plataforma fácil de usar.<br>
         Administra tus clientes, productos, ventas y más desde un único lugar.
       </p>
@@ -164,18 +163,18 @@
         <!-- Columna izquierda -->
         <div class="col-md-4 d-flex flex-column gap-3">
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-facturacion.png') }}" width="45" class="mx-auto mb-2" alt="Facturación">
+            <img src="{{ asset('img/icon-facturacion.png') }}" width="39" class="mx-auto mb-2" alt="Facturación">
             <h6 class="fw-bold">Facturación Electrónica</h6>
             <p class="text-muted small">Emite comprobantes electrónicos válidos ante SUNAT & RENIEC de forma rápida y
               segura.</p>
           </div>
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-gestion.png') }}" width="45" class="mx-auto mb-2" alt="Gestión">
+            <img src="{{ asset('img/icon-gestion.png') }}" width="39" class="mx-auto mb-2" alt="Gestión">
             <h6 class="fw-bold">Gestión Administrativa Completa</h6>
             <p class="text-muted small">Administra clientes, productos, ventas e inventarios desde un solo lugar.</p>
           </div>
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-soporte.png') }}" width="45" class="mx-auto mb-2" alt="Soporte">
+            <img src="{{ asset('img/icon-soporte.png') }}" width="39" class="mx-auto mb-2" alt="Soporte">
             <h6 class="fw-bold">Soporte Técnico Especializado</h6>
             <p class="text-muted small">Asistencia rápida y confiable para resolver cualquier inconveniente.</p>
           </div>
@@ -183,24 +182,24 @@
 
         <!-- Mockup central -->
         <div class="col-md-4 d-flex justify-content-center align-items-center">
-          <img src="{{ asset('img/mockup-sistema.png') }}" class="img-fluid" style="max-width:75%; height:auto;"
+          <img src="{{ asset('img/mockup-sistema.png') }}" class="img-fluid" style="max-width:70%; height:auto;"
             alt="Pantallas del sistema">
         </div>
 
         <!-- Columna derecha -->
         <div class="col-md-4 d-flex flex-column gap-3">
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-integracion.png') }}" width="45" class="mx-auto mb-2" alt="Integración">
+            <img src="{{ asset('img/icon-integracion.png') }}" width="40" class="mx-auto mb-2" alt="Integración">
             <h6 class="fw-bold">Integración con SUNAT y RENIEC</h6>
             <p class="text-muted small">Garantizamos cumplimiento con las normativas peruanas para tu tranquilidad.</p>
           </div>
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-planes.png') }}" width="45" class="mx-auto mb-2" alt="Planes">
+            <img src="{{ asset('img/icon-planes.png') }}" width="40" class="mx-auto mb-2" alt="Planes">
             <h6 class="fw-bold">Planes Flexibles y Escalables</h6>
             <p class="text-muted small">Soluciones que se adaptan al crecimiento de tu negocio.</p>
           </div>
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-seguridad.png') }}" width="45" class="mx-auto mb-2" alt="Seguridad">
+            <img src="{{ asset('img/icon-seguridad.png') }}" width="40" class="mx-auto mb-2" alt="Seguridad">
             <h6 class="fw-bold">Seguridad y Respaldo de Información</h6>
             <p class="text-muted small">Protegemos tus datos con tecnología segura y almacenamiento confiable.</p>
           </div>
@@ -210,8 +209,8 @@
   </section>
 
   <!-- Nosotros -->
-<section id="nosotros" class="py-5 text-center text-dark"
-    style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover;">
+<section id="nosotros" class="text-center text-dark"
+  style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover; padding: 70px 0;">
   <div class="container">
 
     <!-- Título  -->
@@ -329,13 +328,15 @@
 
                         <!-- Comentarios  -->
                         <div class="mb-3">
-                            <label for="comentarios" class="form-label fw-bold" style="color: #2C3E50;"></label>
-                            <textarea class="form-control" id="comentarios" name="comentarios" rows="4" required placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente." style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;"></textarea>
+                         <label for="comentarios" class="form-label fw-bold" style="color: #2C3E50;"></label>
+                         <textarea class="form-control" id="comentarios" name="comentarios" rows="4" required
+                         placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
+                          style="border-radius: 7px; border: 1px solid #BDC3C7; padding: 1px; font-size: 14px;"></textarea>
                         </div>
 
                         <!-- Botón de enviar -->
                         <button type="submit"
-                          style="background-color: #77af66; border: none; border-radius: 30px; font-weight: bold; padding: 5px 25px; color: #fff;"> Solicitar
+                          style="background-color: #77af66; border: none; border-radius: 30px; font-weight: bold; padding: 4px 25px; color: #fff;"> Solicitar
                         </button>
                     </form>
                 </div>
