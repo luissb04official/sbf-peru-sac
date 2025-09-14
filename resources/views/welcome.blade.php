@@ -102,7 +102,7 @@
 
 @section('content')
  <!-- Hero -->
-<section id="inicio" class="hero d-flex align-items-center text-start py-5" style="height: 90vh; padding-top: 100px; padding-bottom: 80px;">
+<section id="inicio" class="hero d-flex align-items-center text-start py-5" style="height: 89vh; padding-top: 100px; padding-bottom: 80px;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-7">
@@ -114,15 +114,17 @@
                 .titulo-personalizado {
                  font-family: 'Nunito Sans', sans-serif;
                  font-weight: 700;
-                 letter-spacing: 0.7px;
+                 letter-spacing: 0.6px;
                  color: #ffffff;
                  }
                 </style>
 
-                <p class="lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">
-                    El sistema de facturación electrónica más rápido, seguro y accesible del Perú.
-                    Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
+                <p class="mt-3 animate__animated animate__fadeInUp animate__delay-1s"
+                 style="font-size: 18px; font-family: 'Open Sans', sans-serif;">
+                   El sistema de facturación electrónica más rápido, seguro y accesible del Perú.
+                   Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
                 </p>
+
 
                 <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-2s">
                     <li>✅ Simplifica tu contabilidad</li>
@@ -132,9 +134,11 @@
                 </ul>
             </div>
         </div>
-        <p class="mt-4 fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-3s">
-            ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
-        </p>
+       <p class="fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-3s"
+   style="margin-top: 75px;">
+    ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
+</p>
+
     </div>
 </section>
 
@@ -144,7 +148,12 @@
     <div class="container">
 
       <!-- Título -->
-      <h2 class="text-center fw-bold mb-3">SOLUCIÓN DE FACTURACIÓN TODO EN UNO</h2>
+      <h2 class="text-center fw-bold mb-3"
+      style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 2px; color: #000000;">
+      SOLUCIÓN DE FACTURACIÓN TODO EN UNO
+     </h2>
+
+
       <p class="custom-text text-center mb-5">
         Optimiza la gestión de tu facturación electrónica con nuestra plataforma fácil de usar.<br>
         Administra tus clientes, productos, ventas y más desde un único lugar.
@@ -283,57 +292,64 @@
     <div class="container">
        <h2 class="text-center fw-bold mb-5" style="font-family: 'Nunito Sans', sans-serif; color: #333333; letter-spacing: 1px; font-weight: 700;">¿CÓMO PODEMOS AYUDARTE?</h2>
         <div class="row justify-content-center align-items-center">
+
             <!-- Columna izquierda: Formulario -->
             <div class="col-md-6">
-                <div class="bg-light p-5 rounded-3 shadow-lg" style="background-color: #c5c7cd;">
+    <div class="bg-light p-4 shadow-lg"
+         style="background-color: #c5c7cd; max-width: 85%; margin: 0 auto; border: 2px solid #999; border-radius: 40px;">
 
-                    <!-- Título -->
-                    <h3 class="text-center mb-4" style="font-family: 'Nunito Sans', sans-serif; color: #23262a; font-weight: 500;">CONTÁCTANOS</h3>
+                       <!-- Título -->
+                    <h3 class="text-center mb-4" style="font-family: 'Nunito Sans', sans-serif; color: #23262a; font-weight: 500;">Contáctanos</h3>
 
                     <form action="#" method="POST">
                         @csrf
                         <!-- Nombre -->
                         <div class="mb-3">
                             <label for="nombre" class="form-label fw-bold" style="color: #2C3E50;">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                            <input type="text" class="form-control" id="nombre" name="nombre" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
                         </div>
 
                         <!-- RUC -->
                         <div class="mb-3">
                             <label for="ruc" class="form-label fw-bold" style="color: #2C3E50;">RUC</label>
-                            <input type="text" class="form-control" id="ruc" name="ruc" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                            <input type="text" class="form-control" id="ruc" name="ruc" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
                         </div>
 
                         <!-- Correo Electrónico -->
                         <div class="mb-3">
                             <label for="correo" class="form-label fw-bold" style="color: #2C3E50;">Correo electrónico</label>
-                            <input type="email" class="form-control" id="correo" name="correo" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                            <input type="email" class="form-control" id="correo" name="correo" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
                         </div>
 
                         <!-- Teléfono -->
                         <div class="mb-3">
                             <label for="telefono" class="form-label fw-bold" style="color: #2C3E50;">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;">
+                            <input type="text" class="form-control" id="telefono" name="telefono" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
                         </div>
 
                         <!-- Comentarios  -->
                         <div class="mb-3">
                             <label for="comentarios" class="form-label fw-bold" style="color: #2C3E50;"></label>
-                            <textarea class="form-control" id="comentarios" name="comentarios" rows="4" required placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente." style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 10px;"></textarea>
+                            <textarea class="form-control" id="comentarios" name="comentarios" rows="4" required placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente." style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;"></textarea>
                         </div>
 
                         <!-- Botón de enviar -->
-                        <button type="submit" class="btn btn-primary" style="border-radius: 20px; font-weight: bold; padding: 10px 25px;">Solicitar</button>
+                        <button type="submit"
+                          style="background-color: #77af66; border: none; border-radius: 30px; font-weight: bold; padding: 5px 25px; color: #fff;"> Solicitar
+                        </button>
                     </form>
                 </div>
             </div>
 
             <!-- Columna derecha: Imagen -->
-            <div class="col-md-6">
-                <img src="{{ asset('img/contacto-imagen.png') }}" alt="Imagen de contacto" class="img-fluid rounded-3 shadow-sm" style="max-width: 250%; height: auto; border-radius: 55px; position: relative; left: 55px;">
-            </div>
-        </div>
+    <div class="col-md-6">
+    <img src="{{ asset('img/contacto-imagen.png') }}"
+         alt="Imagen de contacto"
+         class="img-fluid rounded-3 shadow-sm"
+         style="width: 500%; height: auto; border-radius: 65px; display: block; margin-left: auto; transform: translateX(60px);">
     </div>
+     </div>
+   </div>
 </section>
 
   <!-- Botón subir -->
@@ -355,15 +371,6 @@
   btnScrollTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
-  // Auto-cerrar alertas después de 5s
-  setTimeout(() => {
-    let alert = document.querySelector('.alert');
-    if (alert) {
-      alert.classList.remove('show');
-      alert.classList.add('fade');
-    }
-  }, 5000);
-
 </script>
+
 @endsection
