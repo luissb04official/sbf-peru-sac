@@ -171,7 +171,6 @@
       width: 100%;
     }
 
-    /* Estilos para los inputs con error */
     .is-invalid {
       border-color: #dc3545;
     }
