@@ -182,7 +182,7 @@
 
         <!-- Mockup central -->
         <div class="col-md-4 d-flex justify-content-center align-items-center">
-          <img src="{{ asset('img/mockup-sistema.png') }}" class="img-fluid" style="max-width:70%; height:auto;"
+          <img src="{{ asset('img/mockup-sistema.png') }}" class="img-fluid" style="max-width:80%; height:auto;"
             alt="Pantallas del sistema">
         </div>
 
@@ -289,69 +289,67 @@
 <!-- Sección de contacto -->
 <section id="contacto" class="py-5" style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover;">
     <div class="container">
-       <h2 class="text-center fw-bold mb-5" style="font-family: 'Nunito Sans', sans-serif; color: #333333; letter-spacing: 1px; font-weight: 700;">¿CÓMO PODEMOS AYUDARTE?</h2>
+       <h2 class="text-center fw-bold mb-5" style="font-family: 'Nunito Sans', sans-serif; color: #333333; letter-spacing: 1px; font-weight: 700;"></h2>
         <div class="row justify-content-center align-items-center">
 
-            <!-- Columna izquierda: Formulario -->
-            <div class="col-md-6">
-    <div class="bg-light p-4 shadow-lg"
-         style="background-color: #c5c7cd; max-width: 85%; margin: 0 auto; border: 2px solid #999; border-radius: 40px;">
+ <div style="display: flex; border-radius: 15px; overflow: hidden; font-family: 'Segoe UI', sans-serif;">
 
-                       <!-- Título -->
-                    <h3 class="text-center mb-4" style="font-family: 'Nunito Sans', sans-serif; color: #23262a; font-weight: 500;">Contáctanos</h3>
+  <!-- Formulario -->
+  <div style="background-color: #bcdfdf; padding: 40px; width: 50%;">
+    <p style="color: #007bff; font-weight: 600; font-size: 14px; margin-bottom: 10px;">CONTÁCTANOS</p>
+    <h2 style="color: #0b0c4c; font-weight: 800; font-size: 28px; margin-bottom: 30px;">¿Cómo podemos ayudarte?</h2>
 
-                    <form action="#" method="POST">
-                        @csrf
-                        <!-- Nombre -->
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label fw-bold" style="color: #2C3E50;">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
-                        </div>
+    <form>
 
-                        <!-- RUC -->
-                        <div class="mb-3">
-                            <label for="ruc" class="form-label fw-bold" style="color: #2C3E50;">RUC</label>
-                            <input type="text" class="form-control" id="ruc" name="ruc" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
-                        </div>
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <input type="text" placeholder="Nombre" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+        <input type="email" placeholder="Correo electrónico" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+      </div>
 
-                        <!-- Correo Electrónico -->
-                        <div class="mb-3">
-                            <label for="correo" class="form-label fw-bold" style="color: #2C3E50;">Correo electrónico</label>
-                            <input type="email" class="form-control" id="correo" name="correo" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
-                        </div>
+      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+        <input type="text" placeholder="RUC" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+        <input type="text" placeholder="Teléfono" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+      </div>
 
-                        <!-- Teléfono -->
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label fw-bold" style="color: #2C3E50;">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" required style="border-radius: 8px; border: 1px solid #BDC3C7; padding: 1px;">
-                        </div>
+      <!-- Comentarios -->
+      <div class="mb-3">
+        <textarea
+          placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
+          required
+          style="width: 100%; border-radius: 10px; padding: 12px; font-size: 14px; border: none; resize: none; height: 100px;"></textarea>
+      </div>
 
-                        <!-- Comentarios  -->
-                        <div class="mb-3">
-                         <label for="comentarios" class="form-label fw-bold" style="color: #2C3E50;"></label>
-                         <textarea class="form-control" id="comentarios" name="comentarios" rows="4" required
-                         placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
-                          style="border-radius: 7px; border: 1px solid #BDC3C7; padding: 1px; font-size: 14px;"></textarea>
-                        </div>
+      <!-- Botón -->
+      <div style="margin-top: 15px;">
+        <button type="submit"
+          style="background-color: #0b0c4c; border: none; border-radius: 25px; font-weight: bold; padding: 12px 30px; color: white; font-size: 16px; cursor: pointer;">
+          Solicitar
+        </button>
+      </div>
 
-                        <!-- Botón de enviar -->
-                        <button type="submit"
-                          style="background-color: #77af66; border: none; border-radius: 30px; font-weight: bold; padding: 4px 25px; color: #fff;"> Solicitar
-                        </button>
-                    </form>
-                </div>
-            </div>
+    <!-- CAPTCHA simulado -->
+<div style="margin-top: 30px; background-color: #fff; padding: 12px 15px; border-radius: 8px; border: 1px solid #d3d3d3; max-width: 360px;">
+  <div style="display: flex; align-items: center;">
+    <input type="checkbox" style="width: 20px; height: 20px; margin-right: 10px;">
+    <span style="font-size: 14px; color: #333;">Verifica que eres un ser humano</span>
+    <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" alt="Cloudflare" style="height: 25px; margin-left: auto;">
+  </div>
+  <div style="margin-left: 30px; margin-top: 4px; font-size: 10px; color: #666;">
+    <a href="#" style="color: #666; text-decoration: none;">Privacidad</a> •
+    <a href="#" style="color: #666; text-decoration: none;">Términos</a>
+  </div>
+</div>
 
-            <!-- Columna derecha: Imagen -->
-    <div class="col-md-6">
-    <img src="{{ asset('img/contacto-imagen.png') }}"
-         alt="Imagen de contacto"
-         class="img-fluid rounded-3 shadow-sm"
-         style="width: 500%; height: auto; border-radius: 65px; display: block; margin-left: auto; transform: translateX(60px);">
-    </div>
-     </div>
-   </div>
-</section>
+
+    </form>
+  </div>
+
+  <!-- Imagen -->
+  <div style="width: 50%;">
+   <img src="{{ asset('img/contacto-imagen.png') }}" alt="Formulario de contacto" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+
+</div>
 
   <!-- Botón subir -->
 <button id="btnScrollTop" class="btn-scroll-top">

@@ -189,7 +189,7 @@
 
           <h2 class="login-title">INICIO DE SESIÓN</h2>
 
-          <form action="{{ route('auth.login') }}" method="POST">
+          <form action="{{ route('auth.login.post') }}" method="POST">
             @csrf
             <div class="mb-3">
               <input type="text" name="usuario" class="form-control" placeholder="Usuario o Email"
