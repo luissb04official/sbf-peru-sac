@@ -119,13 +119,13 @@
                  }
                 </style>
 
-                <p class="mt-3 animate__animated animate__fadeInUp animate__delay-1s"
+                <p class="mt-3 animate__animated animate__fadeInUp animate__delay-1.2s"
                  style="font-size: 17px; font-family: 'Open Sans', sans-serif;">
                    El sistema de facturación electrónica más rápido, seguro y accesible del Perú. Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
                 </p>
 
 
-                <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-1.5s">
                     <li>✅ Simplifica tu contabilidad</li>
                     <li>✅ Integrado a SUNAT & RENIEC</li>
                     <li>✅ Planes flexibles</li>
@@ -133,7 +133,7 @@
                 </ul>
             </div>
         </div>
-       <p class="fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-3s"
+       <p class="fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-1.5s"
    style="margin-top: 75px;">
     ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
 </p>
@@ -295,7 +295,7 @@
  <div style="display: flex; border-radius: 15px; overflow: hidden; font-family: 'Segoe UI', sans-serif;">
 
   <!-- Formulario -->
-  <div style="background-color: #bcdfdf; padding: 40px; width: 50%;">
+  <div style="background-color: #def6f6; padding: 40px; width: 50%;">
     <p style="color: #007bff; font-weight: 600; font-size: 14px; margin-bottom: 10px;">CONTÁCTANOS</p>
     <h2 style="color: #0b0c4c; font-weight: 800; font-size: 28px; margin-bottom: 30px;">¿Cómo podemos ayudarte?</h2>
 
