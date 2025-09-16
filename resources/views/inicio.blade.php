@@ -33,7 +33,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: 50%;
+      height: 53%;
       border-radius: 12px;
       margin: 60px 40px 40px 40px;
     }

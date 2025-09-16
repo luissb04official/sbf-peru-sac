@@ -139,24 +139,27 @@
     style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover; padding: 50px 0;"">
     <div class="container">
 
-      <!-- Título -->
-      <h2 class="text-center fw-bold mb-3"
-      style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 1px; color: #000000;">
-      SOLUCIÓN DE FACTURACIÓN TODO EN UNO
-     </h2>
+      <!-- Contenedor -->
+   <div class="text-section" style="margin-top: -20px;">
 
+  <!-- Título -->
+       <h2 class="text-center fw-bold mb-3"
+          style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; letter-spacing: 1px; color: #000000;">
+          SOLUCIÓN DE FACTURACIÓN TODO EN UNO
+       </h2>
 
-      <p class="custom-text text-center mb-4">
-        Optimiza la gestión de tu facturación electrónica con nuestra plataforma fácil de usar.<br>
-        Administra tus clientes, productos, ventas y más desde un único lugar.
+         <p class="custom-text text-center mb-4">
+          Optimiza la gestión de tu facturación electrónica con nuestra plataforma fácil de usar.<br>
+          Administra tus clientes, productos, ventas y más desde un único lugar.
       </p>
+      </div>
 
       <div class="row align-items-stretch g-4">
 
         <!-- Columna izquierda -->
         <div class="col-md-4 d-flex flex-column gap-3">
           <div class="card shadow-sm border-0 p-3 text-center flex-fill">
-            <img src="{{ asset('img/icon-facturacion.png') }}" width="39" class="mx-auto mb-2" alt="Facturación">
+            <img src="{{ asset('img/icon-facturacion.png') }}" width="38" class="mx-auto mb-2" alt="Facturación">
             <h6 class="fw-bold">Facturación Electrónica</h6>
             <p class="text-muted small">Emite comprobantes electrónicos válidos ante SUNAT & RENIEC de forma rápida y
               segura.</p>
@@ -207,6 +210,7 @@
   <div class="container">
 
     <!-- Título  -->
+    <div class="quienes-somos" style="margin-top: -30px;">
     <h2 class="formal-title text-center">¿QUIENES SOMOS?</h2>
     <p class="formal-text mb-3">
       SBF Perú S.A.C. es una empresa dedicada a brindar diversos servicios, entre ellos, Librería Fotocopiadora,
