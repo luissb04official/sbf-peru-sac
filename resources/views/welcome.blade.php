@@ -1,3 +1,4 @@
+
 @extends('layout.base')
 
 @section('title', 'SBF Perú')
@@ -5,6 +6,7 @@
 @section('css')
 
   <style>
+
     /* General */
     body {
       min-width: 1200px;
@@ -95,45 +97,36 @@
 
     /* Velocidad global animaciones */
     .animate__animated {
-      --animate-duration: 1.0s;
+      --animate-duration: 1.2s;
     }
   </style>
 @endsection
 
 @section('content')
+
  <!-- Hero -->
 <section id="inicio" class="hero d-flex align-items-center text-start py-5" style="height: 89vh; padding-top: 100px; padding-bottom: 80px;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-7">
-                <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInUp">
-                    Facturación Electrónica Ágil y confiable
-                </h1>
+                <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInDown">
+    Facturación Electrónica Ágil y confiable
+</h1>
 
-                <style>
-                .titulo-personalizado {
-                 font-family: 'Nunito Sans', sans-serif;
-                 font-weight: 700;
-                 letter-spacing: 0.6px;
-                 color: #ffffff;
-                 }
-                </style>
+<p class="mt-3 animate__animated animate__fadeInDown animate__delay-1.5s"
+ style="font-size: 17px; font-family: 'Open Sans', sans-serif;">
+   El sistema de facturación electrónica más rápido, seguro y accesible del Perú. Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
+</p>
 
-                <p class="mt-3 animate__animated animate__fadeInUp animate__delay-1.2s"
-                 style="font-size: 17px; font-family: 'Open Sans', sans-serif;">
-                   El sistema de facturación electrónica más rápido, seguro y accesible del Perú. Diseñado para emprendedores, negocios en crecimiento y empresas consolidadas.
-                </p>
-
-
-                <ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInUp animate__delay-1.5s">
-                    <li>✅ Simplifica tu contabilidad</li>
-                    <li>✅ Integrado a SUNAT & RENIEC</li>
-                    <li>✅ Planes flexibles</li>
-                    <li>✅ Gestión administrativa completa</li>
-                </ul>
+<ul class="list-unstyled fs-5 mt-4 animate__animated animate__fadeInDown animate__delay-1.7s">
+    <li>✅ Simplifica tu contabilidad</li>
+    <li>✅ Integrado a SUNAT & RENIEC</li>
+    <li>✅ Planes flexibles</li>
+    <li>✅ Gestión administrativa completa</li>
+</ul>
             </div>
         </div>
-       <p class="fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-1.5s"
+       <p class="fs-5 fw-semibold text-center animate__animated animate__fadeInUp animate__delay-1.8s"
    style="margin-top: 75px;">
     ¡EMPIEZA A FACTURAR HOY MISMO Y HAZ CRECER TU NEGOCIO SIN LÍMITES!
 </p>
