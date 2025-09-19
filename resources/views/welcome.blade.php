@@ -285,68 +285,96 @@
 
 <!-- Sección de contacto -->
 <section id="contacto" class="py-5" style="background: url('{{ asset('img/fondo-servicios.jpg') }}') no-repeat center center/cover;">
-    <div class="container">
-       <h2 class="text-center fw-bold mb-5" style="font-family: 'Nunito Sans', sans-serif; color: #333333; letter-spacing: 1px; font-weight: 700;"></h2>
-        <div class="row justify-content-center align-items-center">
+  <div class="container">
+    <div class="row justify-content-center align-items-start" style="display: flex; gap: 30px;">
 
- <div style="display: flex; border-radius: 15px; overflow: hidden; font-family: 'Segoe UI', sans-serif;">
+      <!-- Formulario -->
+      <div style="background-color: #def6f6; padding: 30px; width: 45%; border-radius: 12px;">
+        <p style="color: #007bff; font-weight: 600; font-size: 14px; margin-bottom: 10px;">CONTÁCTANOS</p>
+        <h2 style="color: #0b0c4c; font-weight: 800; font-size: 28px; margin-bottom: 30px;">¿Cómo podemos ayudarte?</h2>
 
-  <!-- Formulario -->
-  <div style="background-color: #def6f6; padding: 40px; width: 50%;">
-    <p style="color: #007bff; font-weight: 600; font-size: 14px; margin-bottom: 10px;">CONTÁCTANOS</p>
-    <h2 style="color: #0b0c4c; font-weight: 800; font-size: 28px; margin-bottom: 30px;">¿Cómo podemos ayudarte?</h2>
+        <form>
+          <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <input type="text" placeholder="Nombre" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+            <input type="email" placeholder="Correo electrónico" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+          </div>
 
-    <form>
+          <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <input type="text" placeholder="RUC" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+            <input type="text" placeholder="Teléfono" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+          </div>
 
-      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-        <input type="text" placeholder="Nombre" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
-        <input type="email" placeholder="Correo electrónico" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+          <div class="mb-3">
+            <textarea placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
+              required
+              style="width: 100%; border-radius: 10px; padding: 12px; font-size: 14px; border: none; resize: none; height: 100px;"></textarea>
+          </div>
+
+          <div style="margin-top: 15px;">
+            <button type="submit"
+              style="background-color: #0b0c4c; border: none; border-radius: 25px; font-weight: bold; padding: 12px 30px; color: white; font-size: 16px; cursor: pointer;">
+              Solicitar
+            </button>
+          </div>
+
+          <!-- CAPTCHA simulado -->
+          <div style="margin-top: 30px; background-color: #fff; padding: 12px 15px; border-radius: 8px; border: 1px solid #d3d3d3; max-width: 360px;">
+            <div style="display: flex; align-items: center;">
+              <input type="checkbox" style="width: 20px; height: 20px; margin-right: 10px;">
+              <span style="font-size: 14px; color: #333;">Verifica que eres un ser humano</span>
+              <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" alt="Cloudflare" style="height: 25px; margin-left: auto;">
+            </div>
+            <div style="margin-left: 30px; margin-top: 4px; font-size: 10px; color: #666;">
+              <a href="#" style="color: #666; text-decoration: none;">Privacidad</a> •
+              <a href="#" style="color: #666; text-decoration: none;">Términos</a>
+            </div>
+          </div>
+        </form>
       </div>
 
-      <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-        <input type="text" placeholder="RUC" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
-        <input type="text" placeholder="Teléfono" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
-      </div>
+<!-- Información de contacto -->
+<div style="width: 30%; font-family: Arial, sans-serif; color:#333; font-size: 13px; line-height: 1.4; margin-top: 30px; margin-left: 25px;">
 
-      <!-- Comentarios -->
-      <div class="mb-3">
-        <textarea
-          placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
-          required
-          style="width: 100%; border-radius: 10px; padding: 12px; font-size: 14px; border: none; resize: none; height: 100px;"></textarea>
-      </div>
+  <!-- BLOQUE CON FONDO GRIS -->
+  <div style="background-color: #f6f6f6; padding: 20px; border-radius: 10px;">
 
-      <!-- Botón -->
-      <div style="margin-top: 15px;">
-        <button type="submit"
-          style="background-color: #0b0c4c; border: none; border-radius: 25px; font-weight: bold; padding: 12px 30px; color: white; font-size: 16px; cursor: pointer;">
-          Solicitar
-        </button>
-      </div>
+    <!-- CORREO -->
+    <h4 style="font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 5px;">Correo</h4>
+    <p style="margin: 2px 0;">ganasco@esg.com.pe</p>
+    <p style="margin: 2px 0;">ventas2@esg.com.pe</p>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #ccc;">
 
-    <!-- CAPTCHA simulado -->
-<div style="margin-top: 30px; background-color: #fff; padding: 12px 15px; border-radius: 8px; border: 1px solid #d3d3d3; max-width: 360px;">
-  <div style="display: flex; align-items: center;">
-    <input type="checkbox" style="width: 20px; height: 20px; margin-right: 10px;">
-    <span style="font-size: 14px; color: #333;">Verifica que eres un ser humano</span>
-    <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" alt="Cloudflare" style="height: 25px; margin-left: auto;">
+    <!-- TELÉFONOS -->
+    <h4 style="font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 5px;">Teléfonos</h4>
+    <p style="margin: 2px 0;">(+51) 1 713 1630</p>
+    <p style="margin: 2px 0;">953 928 070</p>
+    <hr style="margin: 10px 0; border: none; border-top: 1px solid #ccc;">
+
+    <!-- HORARIO -->
+    <h4 style="font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 5px;">Horario</h4>
+    <div style="display: flex; justify-content: space-between; max-width: 300px;">
+      <div>
+        <p style="margin: 2px 0; font-weight: 600;">Lunes - Viernes</p>
+        <p style="margin: 2px 0;">8:15 a.m. - 6:00 p.m.</p>
+      </div>
+      <div>
+        <p style="margin: 2px 0; font-weight: 600;">Sábado</p>
+        <p style="margin: 2px 0;">8:15 a.m. - 12:30 p.m.</p>
+      </div>
+    </div>
   </div>
-  <div style="margin-left: 30px; margin-top: 4px; font-size: 10px; color: #666;">
-    <a href="#" style="color: #666; text-decoration: none;">Privacidad</a> •
-    <a href="#" style="color: #666; text-decoration: none;">Términos</a>
-  </div>
+
+  <!-- MAPA -->
+<div style="margin-top: 25px;">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3904.515690380578!2d-77.1297525!3d-11.8691359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d38adf9325cf%3A0xfe1507fe3c9fa6bc!2sEnvasadora%20San%20Gabriel%20SAC%20-%20ESG%20SAC!5e0!3m2!1ses-419!2spe!4v1758318833518!5m2!1ses-419!2spe"
+    style="border:0; width: 100%; height: 225px; border-radius: 10px;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
 </div>
-
-
-    </form>
-  </div>
-
-  <!-- Imagen -->
-  <div style="width: 50%;">
-   <img src="{{ asset('img/contacto-imagen.png') }}" alt="Formulario de contacto" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-
-</div>
+</section>
 
   <!-- Botón subir -->
 <button id="btnScrollTop" class="btn-scroll-top">
