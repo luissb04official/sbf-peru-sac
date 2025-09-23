@@ -155,7 +155,7 @@
             <p>Calle 13A Nro 180 Int A-4 Centro comercial Hiper - Comas</p>
             <p>Tel: 953 891 818 / 923 916 260</p>
             <p>Email: administracion@gruposbf.pe</p>
-            <p>Web: www.proveedorpse.com</p>
+            <p>Web: www.sbf-peru-sac</p>
         </div>
 
     <!-- Info de la factura -->
