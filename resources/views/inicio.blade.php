@@ -387,24 +387,24 @@
   </div>
 
   <div class="footer-colors-vertical" style="position: relative; top: -58px;">
-    <div class="color-bar" style="background:#0BBBD9; height: 40px; position: relative;">
+    <div class="color-bar" style="background:#C62828; height: 40px; position: relative;"> 
       <a href="https://www.instagram.com/sbf.peru/" target="_blank" style="position: absolute; right: 10px; top: 20%; height: 25px; display: flex; align-items: center;">
         <img src="{{ asset('img/instagram.png') }}" alt="Instagram" height="25">
       </a>
     </div>
 
-    <div class="color-bar" style="background:#F271AC; height: 40px; position: relative;">
+    <div class="color-bar" style="background:#2E7D32; height: 40px; position: relative;"> 
       <a href="https://www.facebook.com/profile.php?id=61579732931468" target="_blank" style="position: absolute; right: 10px; top: 20%; height: 25px; display: flex; align-items: center;">
         <img src="{{ asset('img/facebook.png') }}" alt="Facebook" height="25">
       </a>
     </div>
 
-    <div class="color-bar" style="background:#FCD02F; height: 40px; position: relative;">
+    <div class="color-bar" style="background:#FFD54F; height: 40px; position: relative;"> 
       <a href="https://www.tiktok.com/@sbf.pe" target="_blank" style="position: absolute; right: 10px; top: 20%; height: 25px; display: flex; align-items: center;">
         <img src="{{ asset('img/tiktok.png') }}" alt="TikTok" height="25">
       </a>
     </div>
-  </div>
+</div>
 
   <script>
     function showMessage(title, message, type) {

@@ -203,10 +203,9 @@
 
   <!-- Footer fijo abajo -->
   <div class="footer-colors-vertical">
-    <div class="color-bar" style="background:#0BBBD9; height:20px;"></div>
-    <div class="color-bar" style="background:#F271AC; height:20px; margin-top:6px;"></div>
-    <div class="color-bar" style="background:#FCD02F; height:20px; margin-top:6px;"></div>
-  </div>
+    <div class="color-bar" style="background:#C62828; height:20px;"></div> <!-- Rojo navideño -->
+<div class="color-bar" style="background:#2E7D32; height:20px; margin-top:6px;"></div> <!-- Verde pino -->
+<div class="color-bar" style="background:#FFD54F; height:20px; margin-top:6px;"></div> <!-- Dorado suave -->
 
   @if(session('factura'))
   <div class="factura-overlay">

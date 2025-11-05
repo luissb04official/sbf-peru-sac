@@ -80,7 +80,7 @@
       height: 45px;
       border: none;
       border-radius: 50%;
-      background: #198754;
+      background: #1b8b57ff;
       color: #fff;
       font-size: 22px;
       cursor: pointer;
@@ -340,37 +340,40 @@
 
     <!-- CORREO -->
     <h4 style="font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 5px;">Correo</h4>
-    <p style="margin: 2px 0;">ganasco@esg.com.pe</p>
-    <p style="margin: 2px 0;">ventas2@esg.com.pe</p>
+    <p style="margin: 2px 0;">administracion@gruposbf.pe</p>
     <hr style="margin: 10px 0; border: none; border-top: 1px solid #ccc;">
 
     <!-- TELÉFONOS -->
     <h4 style="font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 5px;">Teléfonos</h4>
-    <p style="margin: 2px 0;">(+51) 1 713 1630</p>
-    <p style="margin: 2px 0;">953 928 070</p>
+    <p style="margin: 2px 0;">953891818 - 923916260 - 972530301</p>
     <hr style="margin: 10px 0; border: none; border-top: 1px solid #ccc;">
 
     <!-- HORARIO -->
     <h4 style="font-weight: 700; text-transform: uppercase; font-size: 12px; margin-bottom: 5px;">Horario</h4>
     <div style="display: flex; justify-content: space-between; max-width: 300px;">
-      <div>
+   <div>
         <p style="margin: 2px 0; font-weight: 600;">Lunes - Viernes</p>
-        <p style="margin: 2px 0;">8:15 a.m. - 6:00 p.m.</p>
-      </div>
+        <p style="margin: 2px 0;">7:00 a.m. - 7:30 p.m.</p>
+   </div>
       <div>
         <p style="margin: 2px 0; font-weight: 600;">Sábado</p>
-        <p style="margin: 2px 0;">8:15 a.m. - 12:30 p.m.</p>
+        <p style="margin: 2px 0;">9:00 a.m. - 12:30 p.m.</p>
       </div>
-    </div>
+  </div>
+      <div>
+        <p style="margin: 2px 0; font-weight: 600;">Domingo</p>
+        <p style="margin: 2px 0;">9:00 a.m. - 5:30 p.m.</p>
+      </div>
   </div>
 
   <!-- MAPA -->
 <div style="margin-top: 25px;">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3904.515690380578!2d-77.1297525!3d-11.8691359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d38adf9325cf%3A0xfe1507fe3c9fa6bc!2sEnvasadora%20San%20Gabriel%20SAC%20-%20ESG%20SAC!5e0!3m2!1ses-419!2spe!4v1758318833518!5m2!1ses-419!2spe"
-    style="border:0; width: 100%; height: 225px; border-radius: 10px;"
-    allowfullscreen=""
-    loading="lazy"
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5681.550344998005!2d-77.06063515815472!3d-11.96803246914376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce33bc704faf%3A0x9a0e85cd969f8047!2sGRUPO%20SBF%20PERU%20SAC!5e0!3m2!1ses-419!2spe!4v1762299544912!5m2!1ses-419!2spe" 
+    width="350" 
+    height="210" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </div>
