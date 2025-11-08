@@ -225,17 +225,14 @@
 
         <!-- Servicio 1 -->
         <div class="col-md-3 col-sm-6">
-          <div class="card shadow-sm border-0 h-100 text-center service-card">
-            <img src="{{ asset('img/sopote-equipos.png') }}" alt="Soporte de equipos"
-                class="card-img-top rounded-top">
-            <div class="card-body">
-              <h5 class="fw-bold">Soporte de Equipos</h5>
-              <p class="text-muted small">
-                Mantenimiento y reparación de equipos de cómputo con soporte técnico especializado.
-              </p>
+            <div class="card shadow-lg border-0 h-100 text-center service-card">
+              <img src="{{ asset('img/sopote-equipos.png') }}" alt="Soporte de Equipos" class="card-img-top rounded-top">
+              <div class="card-body">
+                <h5 class="fw-bold">Soporte de Equipos</h5>
+                <p class="text-muted small">Mantenimiento y reparación de equipos de cómputo con soporte técnico especializado.</p>
+              </div>
             </div>
           </div>
-        </div>
 
           <!-- Servicio 2 -->
           <div class="col-md-3 col-sm-6">
