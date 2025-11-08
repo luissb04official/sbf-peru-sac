@@ -5,8 +5,10 @@ use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactoController;
 
-// Ruta principal de login
+// Ruta principal de login (página)
 Route::get('/', [AuthController::class, 'showLogin'])->name('auth.login');
+// Alias estándar esperado por el middleware de autenticación
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 
 // Ruta de login (POST) para procesar la autenticación
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login.post');
@@ -37,4 +39,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 
-// Puedes agregar más rutas si las necesitas
+// Ruta para procesar formulario de contacto con Turnstile
+Route::post('/contacto/enviar', [ContactoController::class, 'enviar'])->name('contacto.enviar');
+
+// (Eliminado panel de mensajes) — solo guardado en BD

@@ -41,8 +41,10 @@ class AuthController extends Controller
         }
 
         if (Auth::attempt($credentials, $request->has('recordar'))) {
+            // Después de iniciar sesión, ir a una sección vacía: /dashboard
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            $request->session()->forget('url.intended');
+            return redirect('/dashboard');
         }
 
         return back()->withErrors([

@@ -171,6 +171,24 @@
       width: 100%;
     }
 
+    .color-bar a {
+      transition: all 0.3s ease;
+    }
+
+    .color-bar a:hover {
+      transform: scale(1.2);
+    }
+
+    .color-bar img {
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      transition: all 0.3s ease;
+    }
+
+    .color-bar:hover img {
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+      transform: rotate(5deg);
+    }
+
     .is-invalid {
       border-color: #dc3545;
     }
@@ -404,7 +422,7 @@
         <img src="{{ asset('img/tiktok.png') }}" alt="TikTok" height="25">
       </a>
     </div>
-</div>
+  </div>
 
   <script>
     function showMessage(title, message, type) {

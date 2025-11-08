@@ -104,13 +104,13 @@
 
 @section('content')
 
- <!-- Hero -->
+<!-- Hero -->
 <section id="inicio" class="hero d-flex align-items-center text-start py-5" style="height: 89vh; padding-top: 100px; padding-bottom: 80px;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-7">
-                <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInDown">
-    Facturación Electrónica Ágil y confiable
+        <h1 class="display-5 fw-bold titulo-personalizado animate__animated animate__fadeInDown" style="color: #fff; text-shadow: 1px 1px 4px rgba(48,46,46,0.6);">
+  Facturación Electrónica Ágil y confiable
 </h1>
 
 <p class="mt-3 animate__animated animate__fadeInDown animate__delay-1.5s"
@@ -274,7 +274,7 @@
 
       <!-- Botón de WhatsApp -->
       <a href="https://wa.me/51953891818" target="_blank"
-        class="btn btn-success btn-lg px-4 py-2 rounded-pill d-inline-flex align-items-center">
+        class="btn btn-whatsapp btn-lg px-4 py-2 rounded-pill d-inline-flex align-items-center">
         <i class="bi bi-whatsapp me-2 fs-4"></i> Escríbenos al WhatsApp
       </a>
     </div>
@@ -290,43 +290,266 @@
         <p style="color: #007bff; font-weight: 600; font-size: 14px; margin-bottom: 10px;">CONTÁCTANOS</p>
         <h2 style="color: #0b0c4c; font-weight: 800; font-size: 28px; margin-bottom: 30px;">¿Cómo podemos ayudarte?</h2>
 
-        <form>
+        <form id="contactForm" onsubmit="return validateForm(event)">
           <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-            <input type="text" placeholder="Nombre" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
-            <input type="email" placeholder="Correo electrónico" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+            <input type="text" name="nombre" placeholder="Nombre" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+            <input type="email" name="email" placeholder="Correo electrónico" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
           </div>
 
           <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-            <input type="text" placeholder="RUC" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
-            <input type="text" placeholder="Teléfono" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+            <input type="text" name="ruc" placeholder="RUC" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
+            <input type="text" name="telefono" placeholder="Teléfono" style="flex: 1; padding: 10px; border-radius: 8px; border: none;" required>
           </div>
 
           <div class="mb-3">
-            <textarea placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
+            <textarea name="mensaje" placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
               required
               style="width: 100%; border-radius: 10px; padding: 12px; font-size: 14px; border: none; resize: none; height: 100px;"></textarea>
           </div>
 
+          <div id="captcha-wrapper" class="captcha-wrapper" style="margin-top:20px; max-width:360px; display:none; opacity:0; transition: opacity 0.3s ease-in-out;">
+            <div id="turnstile-widget"></div>
+          </div>
+
           <div style="margin-top: 15px;">
-            <button type="submit"
-              style="background-color: #0b0c4c; border: none; border-radius: 25px; font-weight: bold; padding: 12px 30px; color: white; font-size: 16px; cursor: pointer;">
-              Solicitar
+            <button type="submit" id="submitBtn" disabled
+              style="background-color: #94a3b8; border: none; border-radius: 25px; font-weight: bold; padding: 12px 30px; color: white; font-size: 16px; cursor: not-allowed; transition: all 0.3s;">
+              <span id="btnText">Completa el formulario</span>
             </button>
           </div>
 
-          <!-- CAPTCHA simulado -->
-          <div style="margin-top: 30px; background-color: #fff; padding: 12px 15px; border-radius: 8px; border: 1px solid #d3d3d3; max-width: 360px;">
-            <div style="display: flex; align-items: center;">
-              <input type="checkbox" style="width: 20px; height: 20px; margin-right: 10px;">
-              <span style="font-size: 14px; color: #333;">Verifica que eres un ser humano</span>
-              <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" alt="Cloudflare" style="height: 25px; margin-left: auto;">
-            </div>
-            <div style="margin-left: 30px; margin-top: 4px; font-size: 10px; color: #666;">
-              <a href="#" style="color: #666; text-decoration: none;">Privacidad</a> •
-              <a href="#" style="color: #666; text-decoration: none;">Términos</a>
-            </div>
-          </div>
+          <input type="hidden" name="cf-turnstile-response" id="turnstile-token">
         </form>
+
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+        <script>
+          let captchaVerified = false;
+          let turnstileWidgetId = null;
+          let captchaRendered = false;
+          let formCompleted = false;
+
+          function onTurnstileSuccess(token) {
+            console.log('✅ Turnstile verificado:', token);
+            captchaVerified = true;
+            document.getElementById('turnstile-token').value = token;
+            
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            
+            btn.disabled = false;
+            btn.style.backgroundColor = '#2e7d32';
+            btn.style.cursor = 'pointer';
+            btnText.textContent = 'Solicitar';
+            btn.style.boxShadow = '0 4px 12px rgba(46,125,50,0.3)';
+          }
+
+          function onTurnstileError(errorCode) {
+            console.error('❌ Error en Turnstile:', errorCode);
+            captchaVerified = false;
+            
+            // Intentar recargar el widget automáticamente
+            setTimeout(() => {
+              if (window.turnstile && turnstileWidgetId !== null) {
+                try {
+                  window.turnstile.reset(turnstileWidgetId);
+                  const btn = document.getElementById('submitBtn');
+                  const btnText = document.getElementById('btnText');
+                  btn.disabled = true;
+                  btn.style.backgroundColor = '#94a3b8';
+                  btn.style.cursor = 'not-allowed';
+                  btnText.textContent = 'Verifica que eres humano';
+                } catch(e) {
+                  console.error('Error al resetear:', e);
+                }
+              }
+            }, 1000);
+          }
+
+          function onTurnstileExpired() {
+            console.warn('⏰ Turnstile expiró');
+            captchaVerified = false;
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            
+            btn.disabled = true;
+            btn.style.backgroundColor = '#f59e0b';
+            btn.style.cursor = 'not-allowed';
+            btnText.textContent = 'Verifica nuevamente';
+          }
+
+          // Verificar si todos los campos están completos
+          function checkFormCompletion() {
+            const form = document.getElementById('contactForm');
+            const nombre = form.querySelector('[name="nombre"]').value.trim();
+            const email = form.querySelector('[name="email"]').value.trim();
+            const ruc = form.querySelector('[name="ruc"]').value.trim();
+            const telefono = form.querySelector('[name="telefono"]').value.trim();
+            const mensaje = form.querySelector('[name="mensaje"]').value.trim();
+            
+            const isComplete = nombre && email && ruc && telefono && mensaje;
+            
+            if (isComplete && !formCompleted) {
+              // Formulario completado por primera vez - mostrar captcha
+              formCompleted = true;
+              showCaptcha();
+            } else if (!isComplete && formCompleted) {
+              // Formulario incompleto - ocultar captcha
+              formCompleted = false;
+              hideCaptcha();
+            }
+          }
+
+          function showCaptcha() {
+            const captchaWrapper = document.getElementById('captcha-wrapper');
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            
+            captchaWrapper.style.display = 'block';
+            setTimeout(() => {
+              captchaWrapper.style.opacity = '1';
+            }, 10);
+            
+            btnText.textContent = 'Verifica que eres humano';
+            
+            // Renderizar el widget si no existe
+            if (!captchaRendered && window.turnstile) {
+              try {
+                turnstileWidgetId = window.turnstile.render('#turnstile-widget', {
+                  sitekey: '1x00000000000000000000AA',
+                  theme: 'light',
+                  size: 'normal',
+                  callback: onTurnstileSuccess,
+                  'error-callback': onTurnstileError,
+                  'expired-callback': onTurnstileExpired,
+                });
+                captchaRendered = true;
+                console.log('🔧 Captcha mostrado');
+              } catch(error) {
+                console.error('Error al renderizar captcha:', error);
+              }
+            }
+          }
+
+          function hideCaptcha() {
+            const captchaWrapper = document.getElementById('captcha-wrapper');
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            
+            captchaWrapper.style.opacity = '0';
+            setTimeout(() => {
+              captchaWrapper.style.display = 'none';
+            }, 300);
+            
+            btn.disabled = true;
+            btn.style.backgroundColor = '#94a3b8';
+            btn.style.cursor = 'not-allowed';
+            btnText.textContent = 'Completa el formulario';
+            
+            captchaVerified = false;
+          }
+
+          // Escuchar cambios en los campos del formulario
+          document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            
+            inputs.forEach(input => {
+              input.addEventListener('input', checkFormCompletion);
+              input.addEventListener('blur', checkFormCompletion);
+            });
+          });
+
+          function validateForm(event) {
+            event.preventDefault();
+            
+            if (!captchaVerified) {
+              alert('Por favor, completa la verificación de seguridad.');
+              return false;
+            }
+            
+            const form = document.getElementById('contactForm');
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const formData = new FormData(form);
+            
+            // Deshabilitar botón mientras envía
+            btn.disabled = true;
+            btn.style.backgroundColor = '#94a3b8';
+            btnText.textContent = 'Enviando...';
+            
+            // Enviar con fetch API
+            fetch('{{ route("contacto.enviar") }}', {
+              method: 'POST',
+              headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Accept': 'application/json',
+              },
+              body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.success) {
+                // Éxito
+                btn.style.backgroundColor = '#10b981';
+                btnText.textContent = '✓ Enviado';
+                
+                setTimeout(() => {
+                  alert(data.message);
+                  form.reset();
+                  captchaVerified = false;
+                  formCompleted = false;
+                  captchaRendered = false;
+                  btn.disabled = true;
+                  btn.style.backgroundColor = '#94a3b8';
+                  btn.style.cursor = 'not-allowed';
+                  btn.style.boxShadow = 'none';
+                  btnText.textContent = 'Completa el formulario';
+                  
+                  // Ocultar y resetear Turnstile
+                  const captchaWrapper = document.getElementById('captcha-wrapper');
+                  captchaWrapper.style.opacity = '0';
+                  setTimeout(() => {
+                    captchaWrapper.style.display = 'none';
+                    if (window.turnstile && turnstileWidgetId !== null) {
+                      window.turnstile.remove(turnstileWidgetId);
+                      turnstileWidgetId = null;
+                    }
+                  }, 300);
+                }, 800);
+              } else {
+                // Error del servidor
+                btn.style.backgroundColor = '#ef4444';
+                btnText.textContent = 'Error';
+                alert(data.message || 'Error al enviar el formulario');
+                
+                setTimeout(() => {
+                  btn.disabled = false;
+                  btn.style.backgroundColor = '#2e7d32';
+                  btnText.textContent = 'Solicitar';
+                }, 2000);
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              btn.style.backgroundColor = '#ef4444';
+              btnText.textContent = 'Error de conexión';
+              alert('Error de conexión. Por favor, inténtalo de nuevo.');
+              
+              setTimeout(() => {
+                btn.disabled = false;
+                btn.style.backgroundColor = '#2e7d32';
+                btnText.textContent = 'Solicitar';
+              }, 2000);
+            });
+            
+            return false;
+          }
+
+          // Inicializar cuando la API esté lista 
+          window.onloadTurnstileCallback = function () {
+            console.log('🔧 API de Turnstile cargada y lista');
+          };
+        </script>
       </div>
 
 <!-- Información de contacto -->

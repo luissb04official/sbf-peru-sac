@@ -1,21 +1,16 @@
+{{-- Página de dashboard totalmente en blanco (sin header, sin footer) --}}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+       
+        html,body { height:100%; margin:0; padding:0; background:#ffffff; }
+    </style>
 </head>
 <body>
-    <div style="text-align: center; margin-top: 50px;">
-        <h1>Bienvenido al Dashboard</h1>
-        <p>Has iniciado sesión correctamente.</p>
-
-        <form method="POST" action="{{ route('auth.logout') }}">
-            @csrf
-            <button type="submit" style="padding: 10px 20px; background-color: #222; color: #fff; border: none; cursor: pointer;">
-                Cerrar sesión
-            </button>
-        </form>
-    </div>
+    {{-- Intencionalmente vacío --}}
 </body>
 </html>
