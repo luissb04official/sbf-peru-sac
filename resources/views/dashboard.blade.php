@@ -11,6 +11,6 @@
     </style>
 </head>
 <body>
-    {{-- Intencionalmente vacío --}}
+    {{-- vacío --}}
 </body>
 </html>
